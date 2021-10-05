@@ -7,17 +7,12 @@
 
 import Foundation
 
-public protocol AddAccount {
-    func add(addAccountModel: AddAccountModel, completion: (Result<AccountModel, Error>) -> Void)
-}
-
 // Quando criamos uma struct, por padrao no ios
 // ela é internal e o construtora é criado junto
 // mas quando colocamos ela public, por ex nesse caso devido ao Domain
 // e precisarmos acessar esse cara de outro framework
 // precisamos criar um construtor.
-
-public struct AddAccountModel: Encodable {
+public struct AddAccountModel: Model {
     public var name: String
     public var email: String
     public var password: String

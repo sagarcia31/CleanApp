@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		82339039270C2436000C4593 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82339031270C2436000C4593 /* Domain.framework */; };
 		8233903E270C2436000C4593 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8233903D270C2436000C4593 /* DomainTests.swift */; };
-		82339046270C2449000C4593 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82339025270C2365000C4593 /* AddAccount.swift */; };
+		82339046270C2449000C4593 /* AddAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82339025270C2365000C4593 /* AddAccountModel.swift */; };
 		82339047270C2449000C4593 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82339024270C2365000C4593 /* AccountModel.swift */; };
 		827EFB3D270C1C8E008F9930 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EFB3C270C1C8E008F9930 /* DataTests.swift */; };
 		827EFB3E270C1C8E008F9930 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D765CC270C15CE00F830FA /* Data.framework */; };
-		82D765DA270C15CF00F830FA /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 82D765CE270C15CE00F830FA /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82B2E23B270D107000552EC6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E23A270D107000552EC6 /* Model.swift */; };
+		82B2E23E270D113600552EC6 /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E23C270D112A00552EC6 /* RemoteAddAccount.swift */; };
+		82B2E240270D114F00552EC6 /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E23F270D114F00552EC6 /* HttpPostClient.swift */; };
+		82B2E242270D121700552EC6 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E241270D121700552EC6 /* AddAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,14 +58,17 @@
 
 /* Begin PBXFileReference section */
 		82339024270C2365000C4593 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
-		82339025270C2365000C4593 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
+		82339025270C2365000C4593 /* AddAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountModel.swift; sourceTree = "<group>"; };
 		82339031270C2436000C4593 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82339038270C2436000C4593 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8233903D270C2436000C4593 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
 		827EFB3A270C1C8E008F9930 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		827EFB3C270C1C8E008F9930 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
+		82B2E23A270D107000552EC6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		82B2E23C270D112A00552EC6 /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
+		82B2E23F270D114F00552EC6 /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
+		82B2E241270D121700552EC6 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
 		82D765CC270C15CE00F830FA /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		82D765CE270C15CE00F830FA /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +108,8 @@
 		82339032270C2436000C4593 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				82339024270C2365000C4593 /* AccountModel.swift */,
-				82339025270C2365000C4593 /* AddAccount.swift */,
+				82B2E243270D122900552EC6 /* Models */,
+				82B2E244270D123000552EC6 /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -126,15 +132,58 @@
 		827EFB3B270C1C8E008F9930 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				827EFB3C270C1C8E008F9930 /* DataTests.swift */,
+				82B2E248270D12BD00552EC6 /* UseCases */,
 			);
 			path = DataTests;
+			sourceTree = "<group>";
+		};
+		82B2E243270D122900552EC6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82339024270C2365000C4593 /* AccountModel.swift */,
+				82B2E23A270D107000552EC6 /* Model.swift */,
+				82339025270C2365000C4593 /* AddAccountModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82B2E244270D123000552EC6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				82B2E241270D121700552EC6 /* AddAccount.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		82B2E246270D127C00552EC6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				82B2E23C270D112A00552EC6 /* RemoteAddAccount.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		82B2E247270D12B000552EC6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				82B2E23F270D114F00552EC6 /* HttpPostClient.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		82B2E248270D12BD00552EC6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				827EFB3C270C1C8E008F9930 /* DataTests.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		82D765CD270C15CE00F830FA /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				82D765CE270C15CE00F830FA /* Data.h */,
+				82B2E246270D127C00552EC6 /* UseCases */,
+				82B2E247270D12B000552EC6 /* Protocols */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -142,9 +191,9 @@
 		82DFD3482706762100A8B56B = {
 			isa = PBXGroup;
 			children = (
+				82339032270C2436000C4593 /* Domain */,
 				82D765CD270C15CE00F830FA /* Data */,
 				827EFB3B270C1C8E008F9930 /* DataTests */,
-				82339032270C2436000C4593 /* Domain */,
 				8233903C270C2436000C4593 /* DomainTests */,
 				82DFD3532706762100A8B56B /* Products */,
 				8251EF02270BFA2B007FA5FF /* Frameworks */,
@@ -176,7 +225,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82D765DA270C15CF00F830FA /* Data.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +386,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82339046270C2449000C4593 /* AddAccount.swift in Sources */,
+				82B2E23B270D107000552EC6 /* Model.swift in Sources */,
+				82B2E242270D121700552EC6 /* AddAccount.swift in Sources */,
+				82339046270C2449000C4593 /* AddAccountModel.swift in Sources */,
 				82339047270C2449000C4593 /* AccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +413,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82B2E23E270D113600552EC6 /* RemoteAddAccount.swift in Sources */,
+				82B2E240270D114F00552EC6 /* HttpPostClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +542,7 @@
 		827EFB42270C1C8E008F9930 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -512,6 +565,7 @@
 		827EFB43270C1C8E008F9930 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
