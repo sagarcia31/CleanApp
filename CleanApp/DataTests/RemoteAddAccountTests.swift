@@ -35,7 +35,9 @@ class RemoteAddAccountTests: XCTestCase {
         sut.add()
         XCTAssertEqual(httpClientSpy.url, url)
     }
-    
+}
+
+extension RemoteAddAccountTests {
     // Faz uma implementaçao fake do protocolo httpclient
     class HttpClientSpy: HttpPostClient {
         var url: URL?
