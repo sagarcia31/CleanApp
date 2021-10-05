@@ -1,3 +1,0 @@
-[console_scripts]
-scheduler-cli = scheduler_cli.scheduler_cli:main
-
