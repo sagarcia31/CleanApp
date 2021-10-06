@@ -71,22 +71,6 @@ extension RemoteAddAccountTests {
         return (sut, httpClientSpy)
     }
     
-    func checkMemoryLeak(for instance: AnyObject, file: StaticString = #filePath, line: UInt = #line) {
-        // Esse cara serve para verificar se existe algum memory leak dentro do SUT,
-        // por exemplo dentro do Remote addACount se eu colocar uma referencia dele dentro da implementaçao no callback do protocolo do httpPoStClient já da  bug
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, file: file, line: line)
-        }
-    }
-    
-    func makeInvalidData() -> Data {
-        return Data("invalid data".utf8)
-    }
-    
-    func makeUrl() -> URL {
-        return URL(string:"http://any-url.com")!
-    }
-    
     func expect(_ sut: RemoteAddAccount, completeWith expectedResult: Result<AccountModel, DomainError>, when action: ()-> Void, file: StaticString = #filePath, line: UInt = #line){
         
         let exp = expectation(description: "waiting")
@@ -110,26 +94,5 @@ extension RemoteAddAccountTests {
     
     func makeAccountModel() -> AccountModel {
         return AccountModel(id:"1", name: "any_name", email: "any_email@email.com", password: "any_password")
-    }
-    
-    // Faz uma implementaçao fake do protocolo httpclient
-    class HttpClientSpy: HttpPostClient {
-        var urls = [URL]()
-        var data: Data?
-        var completion: ((Result<Data, HttpError>)-> Void)?
-        
-        func post(to url: URL, with data: Data?, completion: @escaping(Result<Data, HttpError>)->Void) {
-            self.urls.append(url)
-            self.data = data
-            self.completion = completion
-        }
-        
-        func completeWithError(_ error: HttpError) {
-            completion?(.failure(error))
-        }
-        
-        func completeWithData(_ data: Data) {
-            completion?(.success(data))
-        }
     }
 }

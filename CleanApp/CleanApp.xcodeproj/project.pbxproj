@@ -20,6 +20,9 @@
 		82B2E24B270D526100552EC6 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E24A270D526100552EC6 /* DomainError.swift */; };
 		82B2E24D270D54B000552EC6 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E24C270D54B000552EC6 /* HttpError.swift */; };
 		82B2E24F270D5F0100552EC6 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E24E270D5F0100552EC6 /* ExtensionHelpers.swift */; };
+		82B2E253270D6C4C00552EC6 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E252270D6C4C00552EC6 /* TestExtensions.swift */; };
+		82B2E255270D6CA200552EC6 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E254270D6CA200552EC6 /* TestFactories.swift */; };
+		82B2E257270D6CD700552EC6 /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E256270D6CD700552EC6 /* HttpClientSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		82B2E24A270D526100552EC6 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		82B2E24C270D54B000552EC6 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		82B2E24E270D5F0100552EC6 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
+		82B2E252270D6C4C00552EC6 /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
+		82B2E254270D6CA200552EC6 /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
+		82B2E256270D6CD700552EC6 /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
 		82D765CC270C15CE00F830FA /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,7 +145,9 @@
 		827EFB3B270C1C8E008F9930 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				82B2E251270D6C3400552EC6 /* Helpers */,
 				82B2E248270D12BD00552EC6 /* UseCases */,
+				82B2E258270D6D0000552EC6 /* Http */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -201,6 +209,23 @@
 				82B2E24E270D5F0100552EC6 /* ExtensionHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		82B2E251270D6C3400552EC6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				82B2E252270D6C4C00552EC6 /* TestExtensions.swift */,
+				82B2E254270D6CA200552EC6 /* TestFactories.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		82B2E258270D6D0000552EC6 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				82B2E256270D6CD700552EC6 /* HttpClientSpy.swift */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 		82D765CD270C15CE00F830FA /* Data */ = {
@@ -431,7 +456,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82B2E255270D6CA200552EC6 /* TestFactories.swift in Sources */,
+				82B2E257270D6CD700552EC6 /* HttpClientSpy.swift in Sources */,
 				827EFB3D270C1C8E008F9930 /* DataTests.swift in Sources */,
+				82B2E253270D6C4C00552EC6 /* TestExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
