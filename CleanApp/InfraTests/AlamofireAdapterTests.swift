@@ -17,7 +17,7 @@ class AlamofireAdapter {
     }
     
     func post(to url:URL) {
-        session.request(url).resume()
+        session.request(url, method: .post).resume()
     }
 }
 
@@ -30,14 +30,12 @@ class InfraTests: XCTestCase {
         let session = Session(configuration: configuration)
         let sut = AlamofireAdapter(session: session)
         sut.post(to: url)
-        
         let exp = expectation(description: "waiting")
-        
         URLProtocolStub.observeRequest{request in
             XCTAssertEqual(url, request.url)
+            XCTAssertEqual("POST", request.httpMethod)
             exp.fulfill()
         }
-        
         wait(for: [exp], timeout: 1)
     }
 }
