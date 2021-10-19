@@ -23,7 +23,7 @@ class AlamofireAdapter {
 
 class InfraTests: XCTestCase {
     
-    func test_()  {
+    func test_post_should_make_request_with_valid_url_and_method()  {
         let url = makeUrl()
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [URLProtocolStub.self]
@@ -31,6 +31,8 @@ class InfraTests: XCTestCase {
         let sut = AlamofireAdapter(session: session)
         sut.post(to: url)
         let exp = expectation(description: "waiting")
+        
+        //Observable para verificar quando a request é feita
         URLProtocolStub.observeRequest{request in
             XCTAssertEqual(url, request.url)
             XCTAssertEqual("POST", request.httpMethod)
@@ -43,6 +45,7 @@ class InfraTests: XCTestCase {
 class URLProtocolStub: URLProtocol {
     static var emit: ((URLRequest) -> Void)?
     
+    // Observable
     static func observeRequest(completion: @escaping(URLRequest)-> Void) {
         URLProtocolStub.emit = completion
     }
