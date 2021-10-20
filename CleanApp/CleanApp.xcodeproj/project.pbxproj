@@ -11,6 +11,8 @@
 		82339047270C2449000C4593 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82339024270C2365000C4593 /* AccountModel.swift */; };
 		827EFB3D270C1C8E008F9930 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EFB3C270C1C8E008F9930 /* DataTests.swift */; };
 		827EFB3E270C1C8E008F9930 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D765CC270C15CE00F830FA /* Data.framework */; };
+		82818D732720A8BF00EF0EBB /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D765CC270C15CE00F830FA /* Data.framework */; };
+		82818D742720A8BF00EF0EBB /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82D765CC270C15CE00F830FA /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82B2E23B270D107000552EC6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E23A270D107000552EC6 /* Model.swift */; };
 		82B2E23E270D113600552EC6 /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E23C270D112A00552EC6 /* RemoteAddAccount.swift */; };
 		82B2E240270D114F00552EC6 /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B2E23F270D114F00552EC6 /* HttpPostClient.swift */; };
@@ -45,6 +47,13 @@
 			remoteGlobalIDString = 82339030270C2436000C4593;
 			remoteInfo = Domain;
 		};
+		82818D752720A8C000EF0EBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DFD3492706762100A8B56B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82D765CB270C15CE00F830FA;
+			remoteInfo = Data;
+		};
 		82B2E267270DE90C00552EC6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 82DFD3492706762100A8B56B /* Project object */;
@@ -55,6 +64,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		82818D772720A8C000EF0EBB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				82818D742720A8BF00EF0EBB /* Data.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		82D765E5270C15EF00F830FA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82818D732720A8BF00EF0EBB /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,10 +378,12 @@
 				82B2E25A270DE90C00552EC6 /* Sources */,
 				82B2E25B270DE90C00552EC6 /* Frameworks */,
 				82B2E25C270DE90C00552EC6 /* Resources */,
+				82818D772720A8C000EF0EBB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				82818D762720A8C000EF0EBB /* PBXTargetDependency */,
 			);
 			name = Infra;
 			productName = Infra;
@@ -565,6 +588,11 @@
 			isa = PBXTargetDependency;
 			target = 82339030270C2436000C4593 /* Domain */;
 			targetProxy = 827EFB48270C1D5B008F9930 /* PBXContainerItemProxy */;
+		};
+		82818D762720A8C000EF0EBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82D765CB270C15CE00F830FA /* Data */;
+			targetProxy = 82818D752720A8C000EF0EBB /* PBXContainerItemProxy */;
 		};
 		82B2E268270DE90C00552EC6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
