@@ -34,19 +34,20 @@ class AlamofireAdapterTests: XCTestCase {
     }
     
     func test_post_should_make_request_with_no_data()  {
-        let url = makeUrl()
-        testRequestFor(url: url, data: nil) { request in
+        testRequestFor(url: makeUrl(), data: nil) { request in
             XCTAssertNil(request.httpBodyStream)
         }
     }
 }
 
 extension AlamofireAdapterTests {
-    func makeSut() -> AlamofireAdapter {
+    func makeSut(file: StaticString = #filePath, line: UInt = #line) -> AlamofireAdapter {
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [URLProtocolStub.self]
         let session = Session(configuration: configuration)
-        return AlamofireAdapter(session: session)
+        let sut = AlamofireAdapter(session: session)
+        checkMemoryLeak(for: sut, file: file, line: line)
+        return sut
     }
     
     func testRequestFor(url:URL, data: Data?, action: @escaping(URLRequest) -> Void) {
